@@ -91,6 +91,9 @@ spec:
             requests:
               cpu: "{{ .Values.Master.Cpu }}"
               memory: "{{ .Values.Master.Memory }}"
+            limits:
+              cpu: "{{ .Values.Master.Cpu }}"
+              memory: "{{ .Values.Master.Memory }}" 
           volumeMounts:
 {{- if .Values.Persistence.mounts }}
 {{ toYaml .Values.Persistence.mounts | indent 12 }}
